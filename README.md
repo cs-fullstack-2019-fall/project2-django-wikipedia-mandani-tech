@@ -1,5 +1,7 @@
 # Django Project: A  Wiki web application
 
+# I have created a CheckIn.txt for check in meetings
+
 Create an a Wikipedia Light web application to support multiple Wiki Post Authors.
 
 ### Design Requirements:

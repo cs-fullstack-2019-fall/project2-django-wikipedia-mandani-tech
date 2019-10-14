@@ -1,0 +1,17 @@
+Oct 11-13
+
+What did you do ?
+.SKETCHED a plan on paper
+.Planned out initial end points, templates and model forms that will be needed
+.Created The project
+.Completed tutorial 1
+.Tested the end points to make sure the templates get rendered
+.Created the static directory for index.css and bootstrap.css
+
+What you will do ?
+.Create a design for the home page so that it can be extended to the entire App
+.create models and Model forms for new users
+.Create a login authentication for new users
+
+What are your road blocks?
+.css and bootstrap need to get linked for design
