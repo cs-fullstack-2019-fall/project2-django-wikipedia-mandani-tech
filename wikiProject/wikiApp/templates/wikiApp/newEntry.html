@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>newEntry</title>
-</head>
-<body>
-<h1>New Entries Page</h1>
-</body>
-</html>
+{% extends 'wikiApp/index.html' %}
+
+{% block header %}
+
+ New Entires page
+
+{% endblock%}
+
+
+
+{% block entryForm %}
+<form  method="post">
+{{entry_form}}
+{% csrf_token %}
+ <buton class="" type="submit">Post Your New Wiki Entry Here </buton>
+
+</form>
+{% endblock entryForm %}

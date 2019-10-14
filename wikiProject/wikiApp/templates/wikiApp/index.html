@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="{% static 'wikiApp/index.css' %}">
 </head>
 <body id="container">
-<h1 class="jumbotron">Welcome to Wikipedia</h1>
+
+<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}</h1>
+
+
 <section id="nav">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link active" href="/home/">Home</a>
+            <a class="nav-link active" href="/index/">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/newEntry/">New Wiki Entry</a>
@@ -27,16 +30,29 @@
     </ul>
 </section>
 
-<form method="POST">
+
+<form id="searchbar" method="POST">
+
     {{form.as_p}}
     {% csrf_token %}
 
 </form>
 
+<section id="entryform">
+
+{% block entryForm %}
+
+{% endblock entryForm %}
+
+
+</section>
 
 
 
-<footer class="jumbotron">This application is developed by Hamida Mandani</footer>
+
+
+
+<footer id="footer" class="jumbotron">This application is developed by Hamida Mandani</footer>
 
 {# JavaScript for Bootstrap #}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

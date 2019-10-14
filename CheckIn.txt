@@ -34,6 +34,28 @@ What are your road blocks?
 
  Kenn Notes:
 The styling looks great. Now that you know to work on functionality try to make as much progress on that as you can. Don't worry about styling roadblocks.
+
+
+
+
+ Oct 14 3Pm
+
+ What did you do ?
+.created entry model
+
+ What you will do ?
+. Try to make it work
+ What are your road blocks?
+. I changed the name of my field and try to remove the image field in my form to test and it gave me error for field error
+
+########  raise FieldError(message)
+ django.core.exceptions.FieldError: Unknown field(s) (Entry_FileUpload) specified for NewEntryModel #######
+
+
+
+
+
+
  ___________________________________________________________________________________________________
 
  Oct 15
@@ -44,7 +66,7 @@ The styling looks great. Now that you know to work on functionality try to make 
 
  What are your road blocks?
 
-
+________________________________________________________________________________________________________
 
  What did you do ?
 
