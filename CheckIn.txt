@@ -19,7 +19,7 @@ What are your road blocks?
 
 
  __________________________________________________________________________________________________
- Oct 14
+ Oct 14 at 11am
 
  What did you do ?
  .Create a design for the home page so that it can be extended to the entire App
@@ -31,6 +31,9 @@ What are your road blocks?
  What are your road blocks?
  .Grid adjustment for Nav bar to include form
  .Strategy?
+
+ Kenn Notes:
+The styling looks great. Now that you know to work on functionality try to make as much progress on that as you can. Don't worry about styling roadblocks.
  ___________________________________________________________________________________________________
 
  Oct 15
