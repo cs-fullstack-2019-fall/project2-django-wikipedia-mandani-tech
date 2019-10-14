@@ -15,3 +15,36 @@ What you will do ?
 
 What are your road blocks?
 .css and bootstrap need to get linked for design
+
+
+
+ __________________________________________________________________________________________________
+ Oct 14
+
+ What did you do ?
+ .Create a design for the home page so that it can be extended to the entire App
+
+ What you will do ?
+ .create models and Model forms for new users
+ .Create a login authentication for new users
+
+ What are your road blocks?
+ .Grid adjustment for Nav bar to include form
+ .Strategy?
+ ___________________________________________________________________________________________________
+
+ Oct 15
+
+ What did you do ?
+
+ What you will do ?
+
+ What are your road blocks?
+
+
+
+ What did you do ?
+
+ What you will do ?
+
+ What are your road blocks?
