@@ -42,6 +42,7 @@ The styling looks great. Now that you know to work on functionality try to make 
 
  What did you do ?
 .created entry model
+.changed my strategy from doing authentication to making the entry model
 
  What you will do ?
 . Try to make it work
