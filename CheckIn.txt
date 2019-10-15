@@ -63,17 +63,19 @@ The styling looks great. Now that you know to work on functionality try to make 
 
  What did you do ?
  .Created add , delete for the entries (not completely functional
- .created new user log in
- .created login
+ .created new user log in functional and shows the proper menu on main page
+ .created login and logout views and shows proper menu when user authenticated
+
 
 
  What you will do ?
  .Make edit delete functional
- .Show the functionality for logged in user
+ .Show the functionality for logged in/authenticated user under yourWikiEntries page
 
 
  What are your road blocks?
 . Edit delete did not work . need some more clarification on CRUD
+.foreignkey for displaying the entires of that logged in user
 
 ________________________________________________________________________________________________________
 

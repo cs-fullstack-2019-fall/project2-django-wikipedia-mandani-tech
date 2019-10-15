@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SearchBarForm, NewEntryForm, NewUserForm
@@ -54,6 +54,11 @@ def login_my_user(request):
             "loginform": NewUserForm,
         }
         return render(request, 'wikiApp/login_my_user.html',context)
+
+
+def log_me_out(request):
+    logout(request)
+    return redirect("index")
 
 
 def newEntry(request):
