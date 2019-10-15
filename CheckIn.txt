@@ -77,6 +77,8 @@ The styling looks great. Now that you know to work on functionality try to make 
 . Edit delete did not work . need some more clarification on CRUD
 .foreignkey for displaying the entires of that logged in user
 
+Kenn Notes:
+Make sure you ask about roadblocks sooner so you can start working on related content sooner. It's a big issue that has not been addressed in your project yet.
 ________________________________________________________________________________________________________
 
  Oct 15 3 PM
