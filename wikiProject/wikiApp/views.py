@@ -27,7 +27,7 @@ def new_user(request):
             logInUser = User.objects.create_user(username=request.POST['username'],
                                                  password=request.POST['password'])
             login(request, logInUser)
-            return redirect("yourWikiEntries")
+            return redirect("index")
         else:
             context = {
                 "errors": newUser.errors,
@@ -67,36 +67,36 @@ def newEntry(request):
         print(request.POST)
         form = NewEntryForm(request.POST)
         if form.is_valid():
-            form.save()
+            # form.save()
             tempImageFile = request.FILES
             if not tempImageFile:
                 tempImageFile = ''
             else:
                 tempImageFile = tempImageFile["Entry_FileUpload"]
-            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile,)
+            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile,foreignKeyUser = ['foreignKeyUser'])
             doc.save()
         return render(request, "wikiApp/index.html")
-    else:
-        context = {
+
+    context = {
             'form': NewEntryForm()
         }
     return render(request, "wikiApp/newEntry.html", context)
 
 
 
-def display(request):
 
-    return render(request,'wikiApp/index.html',{})
+
+
 
 
 def edit(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
-    form = NewEntryForm(request.POST or None, instance=entry)
+    form = NewEntryForm(request.POST or None, instance = entry)
     if request.POST:
         if form.is_valid():
             form.save()
             return redirect('index')
-    return render(request, 'wikiApp/index.html', {'form': form})
+    return render(request, 'wikiApp/edit.html', {'form': form})
 
 
 
@@ -104,6 +104,9 @@ def delete(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
     entry.delete()
     return redirect('index')
+
+
+
 
 
 
@@ -129,8 +132,15 @@ def delete(request, pk):
 
 
 def yourWikiEntries(request):
-    form = SearchBarForm(request.POST or None)
-    if request.method == "POST":
-        if form.is_valid():
-            form.save(commit=True)
-    return render(request, 'wikiApp/yourWikiEntries.html', {'form': form})
+    if request.user.is_authenticated:
+
+        context = {
+            "allEntries": NewEntryModel.objects.filter(foreignKeyUser=request.user),
+        }
+        print(context)
+        return render(request, 'wikiApp/yourWikiEntries.html', context)
+    else:
+        context ={
+            "Message_Please_login": "Please Log in to see all your entries"
+        }
+        return render(request, 'wikiApp/yourWikiEntries.html', context)

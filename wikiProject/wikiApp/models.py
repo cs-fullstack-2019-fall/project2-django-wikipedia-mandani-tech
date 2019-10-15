@@ -17,6 +17,7 @@ class NewEntryModel(models.Model):
     Entry_Text = models.TextField(max_length=10000)
     Entry_Date = models.DateTimeField(default=timezone.now())
     Entry_FileUpload = models.ImageField(upload_to='media/', null=True, blank=True)
+    foreignKeyUser = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return f'{self.Entry_Title}, {self.Entry_Text}'

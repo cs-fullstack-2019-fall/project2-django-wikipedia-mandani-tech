@@ -10,17 +10,11 @@
 
 {% block entryForm %}
 
-
-
 <form  action="/newEntry/" method="post">
 {{form}}
 {% csrf_token %}
  <button  type="submit">Post Your New Wiki Entry Here </button>
 
 </form>
-
-
-
-
 
 {% endblock entryForm %}

@@ -20,7 +20,8 @@
 <p>Welcome, {{ user.username}}.</p>
 <section>
     <ul class="nav">
-        <li class="nav.item"><a href="/log_me_out/">LOGOUT</a>
+        <li class="nav.item">
+            <a class="nav-link active" href="/log_me_out/">Login</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="/index/">Home</a>
@@ -57,6 +58,18 @@
         </section>
 {% endif %}
 
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
 <form id="searchbar" method="POST">
 
     {{ searchform.as_p }}
@@ -64,14 +77,8 @@
 
 </form>
 
-
-<section id="entryform">
-
-    {% block entryForm %}
-    {% endblock entryForm %}
-
-
-</section>
+{% block entryForm %}
+{% endblock entryForm %}
 
 
 <section class="postEntry">
@@ -93,6 +100,13 @@
     ​
 </section>
 
+
+<section>
+
+{% block loggedInEntry %}
+{% endblock %}
+
+</section>
 
 <footer id="footer" class="jumbotron">This application is developed by Hamida Mandani</footer>
 

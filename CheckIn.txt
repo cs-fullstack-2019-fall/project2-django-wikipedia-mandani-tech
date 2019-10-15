@@ -82,11 +82,17 @@ ________________________________________________________________________________
  Oct 15 3 PM
 
  What did you do ?
+ . edit and delete works
+ . filtered the wiki entries by foreign key , so that entries by the logged in user is displayed
+
 
  What you will do ?
 
+ .relational data
+
  What are your road blocks?
 
+. direction for related entries
  ________________________________________________________________________________________________________
 
   What did you do ?
