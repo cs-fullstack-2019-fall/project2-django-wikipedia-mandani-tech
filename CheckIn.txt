@@ -59,18 +59,43 @@ The styling looks great. Now that you know to work on functionality try to make 
 
  ___________________________________________________________________________________________________
 
- Oct 15
+ Oct 15 11 AM
 
  What did you do ?
+ .Created add , delete for the entries (not completely functional
+ .created new user log in
+ .created login
+
 
  What you will do ?
+ .Make edit delete functional
+ .Show the functionality for logged in user
+
 
  What are your road blocks?
+. Edit delete did not work . need some more clarification on CRUD
 
 ________________________________________________________________________________________________________
 
+ Oct 15 3 PM
+
  What did you do ?
 
  What you will do ?
 
  What are your road blocks?
+
+ ________________________________________________________________________________________________________
+
+  What did you do ?
+
+  What you will do ?
+
+  What are your road blocks?
+  ________________________________________________________________________________________________________
+
+   What did you do ?
+
+   What you will do ?
+
+   What are your road blocks?

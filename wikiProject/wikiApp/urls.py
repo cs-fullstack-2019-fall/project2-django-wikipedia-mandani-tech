@@ -9,6 +9,9 @@ urlpatterns = [
     path('edit/<int:pk>', views.edit, name='edit'),
     path('delete/<int:pk>', views.newEntry, name='delete'),
     path('yourWikiEntries/', views.yourWikiEntries, name='yourWikiEntries'),
+    path('new_user/', views.new_user, name='new_user'),
+    path('login_my_user/', views.login_my_user, name='login_my_user')
+
 
 
 

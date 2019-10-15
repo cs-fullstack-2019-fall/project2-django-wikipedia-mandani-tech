@@ -12,11 +12,7 @@
 </head>
 <body id="container">
 
-<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}
-
-
-</h1>
-
+<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}</h1>
 
 <section id="nav">
     <ul class="nav">
@@ -29,6 +25,13 @@
         <li class="nav-item">
             <a class="nav-link" href="/yourWikiEntries/">Your Wiki Entires</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/login_my_user/">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/new_user/">Create User Login</a>
+        </li>
+
 
     </ul>
 
@@ -39,6 +42,8 @@
 
     </form>
 </section>
+
+
 
 
 

@@ -1,6 +1,9 @@
+from django.contrib import messages
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import SearchBarForm, NewEntryForm
-from .models import SearchBarModel, NewEntryModel
+from .forms import SearchBarForm, NewEntryForm, NewUserForm
+from .models import  NewEntryModel
 
 # Create your views here.
 from django.http import HttpResponse
@@ -15,6 +18,42 @@ def index(request):
         return redirect('index')
     return render(request, 'wikiApp/index.html',{'searchform': searchform,
                                                  'entry_list': entry_list })
+
+
+def new_user(request):
+    if request.method == "POST":
+        newUser = NewUserForm(request.POST)
+        if newUser.is_valid():
+            logInUser = User.objects.create_user(username=request.POST['username'],
+                                                 password=request.POST['password'])
+            login(request, logInUser)
+            return redirect("yourWikiEntries")
+        else:
+            context = {
+                "errors": newUser.errors,
+                "form": NewUserForm(),
+            }
+            return render(request, 'wikiApp/index.html', context)
+    else:
+        context = {
+            "form": NewUserForm()
+        }
+        return render(request, 'wikiApp/new_user.html', context)
+
+
+def login_my_user(request):
+    if request.method == "POST":
+        print(NewUserForm)
+        loginUser = authenticate(username=request.POST['username'], password=request.POST["password"])
+        if loginUser is not None:
+            login(request, loginUser)
+            return redirect("index")
+    else:
+        messages.error(request, "Wrong username or password")
+        context = {
+            "loginform": NewUserForm,
+        }
+        return render(request, 'wikiApp/login_my_user.html',context)
 
 
 def newEntry(request):
