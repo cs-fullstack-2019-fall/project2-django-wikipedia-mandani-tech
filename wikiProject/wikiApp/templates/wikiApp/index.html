@@ -12,7 +12,10 @@
 </head>
 <body id="container">
 
-<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}</h1>
+<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}
+
+
+</h1>
 
 
 <section id="nav">
@@ -28,25 +31,44 @@
         </li>
 
     </ul>
+
+    <form id="searchbar" method="POST">
+
+        {{ searchform.as_p }}
+        {% csrf_token %}
+
+    </form>
 </section>
 
 
-<form id="searchbar" method="POST">
-
-    {{form.as_p}}
-    {% csrf_token %}
-
-</form>
 
 <section id="entryform">
 
 {% block entryForm %}
-
 {% endblock entryForm %}
 
 
 </section>
 
+
+<section class="postEntry">
+
+{% for post in entry_list %}
+
+{{ post.Entry_Title }}<br/>
+{{ post.Entry_Text }}
+
+<button><a href="{% url 'edit' post.pk %}"> Edit Post</a></button>
+<button><a href="{% url 'delete' post.pk %}"> Delete Post</a></button><hr/>
+
+
+
+{% comment image upload %}
+{{ post.Entry_FileUpload.url }}
+{% endcomment %}
+{% endfor %}
+​
+</section>
 
 
 
