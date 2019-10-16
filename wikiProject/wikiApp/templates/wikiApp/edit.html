@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'wikiApp/index.html' %}
+
+{% block header %}
+
+Edit My Entries
+
+{% endblock%}
+
 
 
 {% block content %}
-<h1>In the Edit Page</h1>
+
 <form method='POST'>
     {{ form.as_p }}
     <button type="submit">Save Item</button>
     {% csrf_token %}
 </form>
-
-{% endblock content %}
-
 
 
 {% for relatedEntry in allRelatedEntries %}
@@ -26,9 +24,13 @@
 
 {% endfor %}
 
+{% endblock content %}
 
 
 
 
-</body>
-</html>
+{% block displayRelatedcontent %}
+
+<button><a href="{% url 'relatedEntries' pk  %}"> Add a Related Entry </a></button>
+
+{% endblock displayRelatedcontent %}

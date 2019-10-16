@@ -92,7 +92,9 @@ def edit(request, pk):
             form.save()
             return redirect('yourWikiEntries')
     context = {'form': form,
-                   "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser = entry)
+                   "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser = entry),
+               'pk': pk
+
 
                    }
     return render(request, 'wikiApp/edit.html', context)
@@ -128,16 +130,15 @@ def relatedEntries(request,pk):
         print(request.POST)
         relatedform = RelatedEntryForm(request.POST)
         if relatedform.is_valid():
-            # form.save()
             tempImageFile = request.FILES
             if not tempImageFile:
                 tempImageFile = ''
             else:
                 tempImageFile = tempImageFile["Related_FileUpload"]
 
-            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = request.get_object_or_404(NewEntryModel, pk=pk))
+            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = get_object_or_404(NewEntryModel, pk=pk))
             doc.save()
-        return render(request, "wikiApp/index.html")
+        return redirect ('edit', pk)
 
     context = {
         'relatedform': RelatedEntryForm()

@@ -110,6 +110,8 @@ ________________________________________________________________________________
 
   What are your road blocks?
   .I have created the model and form dont know where to go next
+  .I have tried to grab the instance of New Entry and attached it to foreign key of related model
+  .No results
   ________________________________________________________________________________________________________
 
    What did you do ?
