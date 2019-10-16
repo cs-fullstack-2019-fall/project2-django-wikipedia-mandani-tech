@@ -18,7 +18,7 @@
             <a class="nav-link active" href="/log_me_out/">Logout</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="/index/">Home</a>
+            <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/newEntry/">New Wiki Entry</a>
@@ -45,7 +45,7 @@
         <section id="nav">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/index/">Home</a>
+                    <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/newEntry/">New Wiki Entry</a>
@@ -93,8 +93,10 @@
 
     {{ post.Entry_Title }}<br/>
     {{ post.Entry_Text }}
+    <p>{{entry.Entry_FileUpload}} test</p>
+    {% if  post.Entry_FileUpload  != '' %}
     <img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE"><br/>
-
+    {% endif %}
 
 
     <hr/>
@@ -103,7 +105,11 @@
 
         {{ entry.Related_Title }}<br/>
         {{ entry.Related_Text }}
+
+    {% if  entry.Related_FileUpload  != '' %}
     <img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
+    {% endif %}
+
         <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
         <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
         <hr/>

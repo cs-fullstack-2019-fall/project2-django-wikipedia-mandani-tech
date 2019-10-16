@@ -120,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/wikiApp/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'wikiApp/media/')
+MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'wikiApp/')

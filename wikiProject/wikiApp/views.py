@@ -68,13 +68,15 @@ def newEntry(request):
         print(request.POST)
         form = NewEntryForm(request.POST)
         if form.is_valid():
+            print(request.FILES)
             tempImageFile = request.FILES
             if not tempImageFile:
                 tempImageFile = ''
             else:
-                 doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = request.FILES['Entry_FileUpload'],foreignKeyUser = request.user)
-                 doc.save()
-        return render(request, "wikiApp/index.html")
+                tempImageFile = tempImageFile['Entry_FileUpload']
+            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile ,foreignKeyUser = request.user)
+            doc.save()
+        return redirect("index")
 
     context = {
          'form': NewEntryForm(),
@@ -137,6 +139,7 @@ def relatedEntries(request,pk):
 
             doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = get_object_or_404(NewEntryModel, pk=pk))
             doc.save()
+
         return redirect ('edit', pk)
 
     context = {
