@@ -2,8 +2,8 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import SearchBarForm, NewEntryForm, NewUserForm
-from .models import  NewEntryModel
+from .forms import SearchBarForm, NewEntryForm, NewUserForm, RelatedEntryForm
+from .models import NewEntryModel, RelatedEntryModel
 
 # Create your views here.
 from django.http import HttpResponse
@@ -19,7 +19,7 @@ def index(request):
     return render(request, 'wikiApp/index.html',{'searchform': searchform,
                                                  'entry_list': entry_list })
 
-
+# Creating a sign up user
 def new_user(request):
     if request.method == "POST":
         newUser = NewUserForm(request.POST)
@@ -66,6 +66,7 @@ def newEntry(request):
     if request.method == "POST":
         print(request.POST)
         form = NewEntryForm(request.POST)
+        # relatedform = RelatedEntryForm(request.POST)
         if form.is_valid():
             # form.save()
             tempImageFile = request.FILES
@@ -73,7 +74,7 @@ def newEntry(request):
                 tempImageFile = ''
             else:
                 tempImageFile = tempImageFile["Entry_FileUpload"]
-            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile,foreignKeyUser = ['foreignKeyUser'])
+            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile,foreignKeyUser = request.user)
             doc.save()
         return render(request, "wikiApp/index.html")
 
@@ -83,27 +84,20 @@ def newEntry(request):
     return render(request, "wikiApp/newEntry.html", context)
 
 
-
-
-
-
-
-
 def edit(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
     form = NewEntryForm(request.POST or None, instance = entry)
     if request.POST:
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('yourWikiEntries')
     return render(request, 'wikiApp/edit.html', {'form': form})
-
 
 
 def delete(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
     entry.delete()
-    return redirect('index')
+    return redirect('yourWikiEntries')
 
 
 
@@ -136,11 +130,12 @@ def yourWikiEntries(request):
 
         context = {
             "allEntries": NewEntryModel.objects.filter(foreignKeyUser=request.user),
+            # "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser =request.RelatedEntryModel)
         }
         print(context)
         return render(request, 'wikiApp/yourWikiEntries.html', context)
     else:
-        context ={
+        context = {
             "Message_Please_login": "Please Log in to see all your entries"
         }
         return render(request, 'wikiApp/yourWikiEntries.html', context)

@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Wikipedia</title>
-
     {% load static %}
-
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'wikiApp/index.css' %}">
 </head>
 <body id="container">
-
 <h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}</h1>
-
 {% if user.is_authenticated %}
-
 <p>Welcome, {{ user.username}}.</p>
 <section>
     <ul class="nav">
         <li class="nav.item">
-            <a class="nav-link active" href="/log_me_out/">Login</a>
+            <a class="nav-link active" href="/log_me_out/">Logout</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="/index/">Home</a>
@@ -34,6 +28,13 @@
         </li>
     </ul>
 </section>
+
+{% block content %}
+{% endblock %}
+
+{% block entryForm %}
+{% endblock entryForm %}
+
 
 
     {% else %}
@@ -59,16 +60,6 @@
 {% endif %}
 
 
-{% block content %}
-{% endblock %}
-
-
-
-
-
-
-
-
 
 <form id="searchbar" method="POST">
 
@@ -77,8 +68,18 @@
 
 </form>
 
-{% block entryForm %}
-{% endblock entryForm %}
+
+<section>
+    <br/>
+{% block logIncontent %}
+{% endblock %}
+
+</section>
+
+<section>
+    {% block signup   %}
+    {% endblock %}
+</section>
 
 
 <section class="postEntry">
@@ -88,8 +89,7 @@
     {{ post.Entry_Title }}<br/>
     {{ post.Entry_Text }}
 
-    <button><a href="{% url 'edit' post.pk %}"> Edit Post</a></button>
-    <button><a href="{% url 'delete' post.pk %}"> Delete Post</a></button>
+
     <hr/>
 
 

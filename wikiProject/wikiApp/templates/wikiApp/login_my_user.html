@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'wikiApp/index.html' %}
 
+{% block header   %}
+
+Log In!
+
+{% endblock %}
+
+{% block logIncontent %}
 
 <form  method="POST">
 
@@ -14,6 +15,4 @@
     <button><a href="{% url 'index' %}"></a>LOGIN</button>
 
 </form>
-
-</body>
-</html>
+{% endblock %}

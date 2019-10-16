@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'wikiApp/index.html' %}
 
-<h1>CREATE MY NEW USER ACCOUNT</h1>
+{% block header   %}
+
+Sign Up!
+
+{% endblock %}
+
+
+{% block signup  %}
+
+
 <form method="post">
 {{form.as_p}}
 {% csrf_token %}
 <button>Create My Login Account</button>
 </form>
-</body>
-</html>
+
+{% endblock %}

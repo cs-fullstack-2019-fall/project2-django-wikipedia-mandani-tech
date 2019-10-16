@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import SearchBarModel , NewEntryModel
+from .models import SearchBarModel, NewEntryModel, RelatedEntryModel
 from django.contrib.auth.models import User
 
 
@@ -19,3 +19,11 @@ class NewUserForm(ModelForm):
     class Meta:
         model = User
         fields = ['username','password']
+
+
+class RelatedEntryForm(ModelForm):
+    class Meta:
+        model = RelatedEntryModel
+        fields = ['Related_Title','Related_Text', 'Related_FileUpload']
+
+
