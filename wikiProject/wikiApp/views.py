@@ -72,9 +72,8 @@ def newEntry(request):
             if not tempImageFile:
                 tempImageFile = ''
             else:
-                tempImageFile = tempImageFile["Entry_FileUpload"]
-            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile,foreignKeyUser = request.user)
-            doc.save()
+                 doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = request.FILES['Entry_FileUpload'],foreignKeyUser = request.user)
+                 doc.save()
         return render(request, "wikiApp/index.html")
 
     context = {

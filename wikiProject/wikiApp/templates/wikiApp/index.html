@@ -93,6 +93,8 @@
 
     {{ post.Entry_Title }}<br/>
     {{ post.Entry_Text }}
+    <img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE"><br/>
+
 
 
     <hr/>
@@ -100,16 +102,15 @@
         {% for entry in allRelatedEntries %}
 
         {{ entry.Related_Title }}<br/>
-        {{ entry.Related_Text }}<br/>
+        {{ entry.Related_Text }}
+    <img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
         <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
         <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
         <hr/>
         {% endfor %}
 </section>
 
-    {% comment image upload %}
-    {{ post.Entry_FileUpload.url }}
-    {% endcomment %}
+
     {% endfor %}
     ​
 </section>
