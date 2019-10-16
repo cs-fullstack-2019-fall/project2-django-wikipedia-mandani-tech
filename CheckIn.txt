@@ -96,12 +96,20 @@ ________________________________________________________________________________
 
 . direction for related entries dont know how to get started
  ________________________________________________________________________________________________________
+ Oct 16 11 AM
 
   What did you do ?
+. Extended the template for login and sign up the pages
+. created model and forms for related entries
 
   What you will do ?
+  .give logged in user an option to make related entires along with the main entry
+  .display related entires for the logged In user along with his main entries
+  .upload image
+  .search bar
 
   What are your road blocks?
+  .I have created the model and form dont know where to go next
   ________________________________________________________________________________________________________
 
    What did you do ?
