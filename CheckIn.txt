@@ -110,6 +110,10 @@ ________________________________________________________________________________
 
   What are your road blocks?
   .I have created the model and form dont know where to go next
+  
+  Thomas' Notes:
+You Have already made a new page for entries. Related content is the exact same thing just different type of entry for the new page.git status
+You have made good progress. Don't let yourself get overwhelmed by the amount of content. remember to break it down into it's pieces
   ________________________________________________________________________________________________________
 
    What did you do ?
