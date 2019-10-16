@@ -62,13 +62,12 @@ def log_me_out(request):
 
 
 def newEntry(request):
+    #________________________ CREATE NEW ENTRIES ________________________#
 
     if request.method == "POST":
         print(request.POST)
         form = NewEntryForm(request.POST)
-        # relatedform = RelatedEntryForm(request.POST)
         if form.is_valid():
-            # form.save()
             tempImageFile = request.FILES
             if not tempImageFile:
                 tempImageFile = ''
@@ -79,14 +78,10 @@ def newEntry(request):
         return render(request, "wikiApp/index.html")
 
     context = {
-            'form': NewEntryForm()
+         'form': NewEntryForm(),
+
         }
     return render(request, "wikiApp/newEntry.html", context)
-
-
-
-
-
 
 
 def edit(request, pk):
@@ -96,7 +91,11 @@ def edit(request, pk):
         if form.is_valid():
             form.save()
             return redirect('yourWikiEntries')
-    return render(request, 'wikiApp/edit.html', {'form': form})
+    context = {'form': form,
+                   "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser = entry)
+
+                   }
+    return render(request, 'wikiApp/edit.html', context)
 
 
 def delete(request, pk):
@@ -105,37 +104,12 @@ def delete(request, pk):
     return redirect('yourWikiEntries')
 
 
-
-
-
-
-
-
-
-
-
-#
-# def newEntry(request):
-#     if request.method == "POST":
-#         print(request.POST)
-#         entry_form = NewEntryForm(request.POST)
-#         if entry_form.is_valid():
-#             entry_form.save()
-#
-#
-#
-#             return redirect('index')
-#
-#     return render(request, "wikiApp/newEntry.html", {'entry_form': NewEntryForm})
-
-
-
 def yourWikiEntries(request):
     if request.user.is_authenticated:
 
         context = {
             "allEntries": NewEntryModel.objects.filter(foreignKeyUser=request.user),
-            # "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser =request.RelatedEntryModel)
+
         }
         print(context)
         return render(request, 'wikiApp/yourWikiEntries.html', context)
@@ -146,7 +120,10 @@ def yourWikiEntries(request):
         return render(request, 'wikiApp/yourWikiEntries.html', context)
 
 
-def relatedEntries(request):
+
+#________________________ CREATE RELATED ENTRIES ________________________#
+
+def relatedEntries(request,pk):
     if request.method == "POST":
         print(request.POST)
         relatedform = RelatedEntryForm(request.POST)
@@ -157,13 +134,14 @@ def relatedEntries(request):
                 tempImageFile = ''
             else:
                 tempImageFile = tempImageFile["Related_FileUpload"]
-            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = request.NewEntryModel)
+
+            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = request.get_object_or_404(NewEntryModel, pk=pk))
             doc.save()
         return render(request, "wikiApp/index.html")
 
     context = {
         'relatedform': RelatedEntryForm()
     }
-    return render(request, "wikiApp/newEntry.html", context)
+    return render(request, "wikiApp/relatedEntries.html", context)
 
 

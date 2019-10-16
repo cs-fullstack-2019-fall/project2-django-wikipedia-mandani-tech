@@ -14,7 +14,19 @@
     <button type="submit">Save Item</button>
     {% csrf_token %}
 </form>
+
 {% endblock content %}
+
+
+
+{% for relatedEntry in allRelatedEntries %}
+
+    {{ relatedEntry.Related_Title }}
+    {{ relatedEntry.Related_Text }}
+
+{% endfor %}
+
+
 
 
 

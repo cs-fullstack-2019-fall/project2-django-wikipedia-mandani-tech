@@ -11,10 +11,6 @@ urlpatterns = [
     path('new_user/', views.new_user, name='new_user'),
     path('login_my_user/', views.login_my_user, name='login_my_user'),
     path('log_me_out/', views.log_me_out, name='log_me_out'),
-    path('relatedEntries/', views.relatedEntries, name='relatedEntries'),
-
-
-
-
+    path('relatedEntries<int:pk>/', views.relatedEntries, name='relatedEntries'),
 
 ]

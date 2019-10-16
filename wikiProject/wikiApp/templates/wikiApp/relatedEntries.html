@@ -1,0 +1,20 @@
+{% extends 'wikiApp/index.html' %}
+
+{% block header %}
+
+Related Entires page
+
+{% endblock%}
+
+
+{% block RelatedEntryForm %}
+<form  action="/relatedEntries/" method="post">
+
+    {{ relatedform }}
+    {% csrf_token %}
+
+    <button  type="submit">Post related  Wiki Entry Here </button>
+
+</form>
+
+{% endblock RelatedEntryForm %}
