@@ -84,6 +84,11 @@ def newEntry(request):
     return render(request, "wikiApp/newEntry.html", context)
 
 
+
+
+
+
+
 def edit(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
     form = NewEntryForm(request.POST or None, instance = entry)
@@ -139,3 +144,26 @@ def yourWikiEntries(request):
             "Message_Please_login": "Please Log in to see all your entries"
         }
         return render(request, 'wikiApp/yourWikiEntries.html', context)
+
+
+def relatedEntries(request):
+    if request.method == "POST":
+        print(request.POST)
+        relatedform = RelatedEntryForm(request.POST)
+        if relatedform.is_valid():
+            # form.save()
+            tempImageFile = request.FILES
+            if not tempImageFile:
+                tempImageFile = ''
+            else:
+                tempImageFile = tempImageFile["Related_FileUpload"]
+            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = request.NewEntryModel)
+            doc.save()
+        return render(request, "wikiApp/index.html")
+
+    context = {
+        'relatedform': RelatedEntryForm()
+    }
+    return render(request, "wikiApp/newEntry.html", context)
+
+

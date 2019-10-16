@@ -22,13 +22,6 @@ These are all your wiki entries!
 {% endfor %}
 
 
-{% for entry in allRelatedEntries %}
 
-    {{ entry.Related_Title }}<br/>
-    {{ entry.Related_Text }}<br/>
-    <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
-    <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
-    <hr/>
-{% endfor %}
 
 {% endblock %}
