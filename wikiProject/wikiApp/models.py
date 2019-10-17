@@ -20,7 +20,7 @@ class NewEntryModel(models.Model):
     foreignKeyUser = models.ForeignKey(User, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
-        return f'{self.Entry_Title}, {self.Entry_Text}'
+        return f'{self.Entry_Title}'
 
 
 class RelatedEntryModel(models.Model):
@@ -31,4 +31,4 @@ class RelatedEntryModel(models.Model):
     RelatedforeignKeyUser = models.ForeignKey(NewEntryModel, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
-        return f'{self.Related_Title}, {self.Related_Text} {self.RelatedforeignKeyUser}'
+        return f'{self.Related_Title} '

@@ -1,0 +1,31 @@
+{% extends 'wikiApp/index.html' %}
+
+{% block header %}
+
+Details Page
+
+{% endblock%}
+
+
+{% block detailEntry %}
+
+{{Entry.Entry_Title}}
+{{Entry.Entry_Text}}
+<img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
+
+{% for entry in allRelatedEntries %}
+
+{{ entry.Related_Title }}<br/>
+{{ entry.Related_Text }}
+
+{% if entry.Related_FileUpload != '' %}
+<img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
+{% endif %}
+
+
+<hr/>
+{% endfor %}
+
+
+
+{% endblock %}

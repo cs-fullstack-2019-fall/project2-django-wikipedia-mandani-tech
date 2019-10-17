@@ -115,9 +115,17 @@ ________________________________________________________________________________
 You Have already made a new page for entries. Related content is the exact same thing just different type of entry for the new page.git status
 You have made good progress. Don't let yourself get overwhelmed by the amount of content. remember to break it down into it's pieces
   ________________________________________________________________________________________________________
+ Oct 17 11 AM
+
 
    What did you do ?
+   . Added the details page
+   . Fixed the navigation bugs
+   .added related stuff to the details and edit page
 
    What you will do ?
+   . Make sure the edit and delete work on edit related items
+
 
    What are your road blocks?
+   . error 404 when try to edit

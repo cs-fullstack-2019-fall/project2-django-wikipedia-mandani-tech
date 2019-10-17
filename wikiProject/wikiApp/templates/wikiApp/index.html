@@ -8,117 +8,140 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'wikiApp/index.css' %}">
 </head>
+
 <body id="container">
+
 <h1 id="header" class="jumbotron"> {% block header %}Welcome to Wikipedia{% endblock header %}</h1>
-{% if user.is_authenticated %}
-<p>Welcome, {{ user.username}}.</p>
-<section>
-    <ul class="nav">
-        <li class="nav.item">
-            <a class="nav-link active" href="/log_me_out/">Logout</a>
-        </li>
+{% if user.is_authenticated %} {#________________________Logged In User Authentication _______________________#}
+
+
+<section id="mynavigationbar1">
+    <ul class="nav navbar ">
+
         <li class="nav-item">
             <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/newEntry/">New Wiki Entry</a>
+            <a class="nav-link" href="{% url 'newEntry' pk %}">New Wiki Entry</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/yourWikiEntries/">Your Wiki Entires</a>
+            <a class="nav-link" href="{% url 'yourWikiEntries' pk %}">Your Wiki Entires</a>
         </li>
 
-        <li class="nav-item" >
-            <form action="/search_results/" method="get">
-                <label for="search1">Search</label>
-                <input id="search1" type="text" placeholder="Wiki search..." name="q"></form>
-
+        <li class="nav.item">
+            <a class="nav-link active" href="/log_me_out/">Logout</a>
         </li>
+
+        <form id="searchbar" action="/search_results/" method="get">
+            <label for="search1">Search</label>
+            <input id="search1" type="text" placeholder="Search Wikipedia..." name="q">
+        </form>
+
     </ul>
+</section>
+<p id="welcomeuser">Welcome, {{ user.username}}.</p>
+
+
+<section id="entryform">
+    {% block entryForm %}
+    {% endblock entryForm %}
+</section>
+
+<section id="related_entryform">
+    {% block RelatedEntryForm %}
+    {% endblock RelatedEntryForm %}
+</section>
+
+<section class="display_entries" id="related_entry_display">
+    {% block displayRelatedcontent %}
+    {% endblock displayRelatedcontent %}
+</section>
+
+
+{% else %}
+<section id="mynavigationbar2">
+    <ul class="nav navbar ">
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link active" href="/login_my_user/">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/new_user/">Sign Up</a>
+        </li>
+
+
+        <form action="/search_results/" method="get">
+            <label for="search2">Search</label>
+            <input id="search2" type="text" placeholder="Search Wikipedia..." name="q">
+        </form>
+    </ul>
+</section>
+
+
+{% endif %} {#________________________Logged In User Authentication if and else ends here_______________________#}
+
+
+
+<section id="signUp">
+{% block signup %}
+{% endblock %}
+</section>
+
+<section class="display_entries">
+    {% block logIncontent %}
+    {% endblock %}
+</section>
+
+<section id="yourwikiEntries">
+{% block loggedInEntry %}
+{% endblock %}
 </section>
 
 {% block content %}
 {% endblock %}
-
-{% block entryForm %}
-{% endblock entryForm %}
-
-{% block RelatedEntryForm %}
-{% endblock RelatedEntryForm %}
-
-{% block displayRelatedcontent %}
-{% endblock displayRelatedcontent %}
-
-    {% else %}
-        <section id="nav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/newEntry/">New Wiki Entry</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/yourWikiEntries/">Your Wiki Entires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/login_my_user/">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/new_user/">Sign Up</a>
-                </li>
-                <li class="nav-item" >
-                    <form action="/search_results/" method="get">
-                    <label for="search2">Search</label>
-                    <input id="search2" type="text" placeholder="Wiki search..." name="q"></form>
-
-                </li>
-            </ul>
-        </section>
-{% endif %} {#________________________Logged In User Authentication if ends here_______________________#}
-
-
-{% block signup %}
-{% endblock %}
-
-
-{% block logIncontent %}
-{% endblock %}
-
-{% block loggedInEntry %}
-{% endblock %}
-
-
 <section class="display_entries">
 
     {% for post in entry_list %}
 
-    {{ post.Entry_Title }}<br/>
+    <a href="{% url 'details' post.pk %}">{{ post.Entry_Title }}</a><br/>
     {{ post.Entry_Text }}
 
-    {% if  post.Entry_FileUpload  != '' %}
+    {% if post.Entry_FileUpload != '' %}
     <img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE"><br/>
     {% endif %}
+
     <hr/>
-<section  class="display_entries">
-        {% for entry in allRelatedEntries %}
+    {% endfor %}
 
-        {{ entry.Related_Title }}<br/>
-        {{ entry.Related_Text }}
+</section>
 
-    {% if  entry.Related_FileUpload  != '' %}
+<section class="display_entries">
+    {% for entry in allRelatedEntries %}
+
+    {{ entry.Related_Title }}<br/>
+    {{ entry.Related_Text }}
+
+    {% if entry.Related_FileUpload != '' %}
     <img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
     {% endif %}
 
-        <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
-        <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
-        <hr/>
-        {% endfor %}
-</section>
-
-
+    <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
+    <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
+    <hr/>
     {% endfor %}
-    ​
 </section>
+
+
+
+
+<section id="detailEntry">
+    {% block detailEntry %}
+    {% endblock %}
+</section>
+
 
 
 

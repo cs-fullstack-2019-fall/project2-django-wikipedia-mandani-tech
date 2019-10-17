@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import SearchBarForm, NewEntryForm, NewUserForm, RelatedEntryForm
 from .models import NewEntryModel, RelatedEntryModel
@@ -11,13 +12,11 @@ from django.http import HttpResponse
 
 def index(request):
     entry_list = NewEntryModel.objects.all()
-    searchform = SearchBarForm(request.POST or None)
-    if request.method == "POST":
-        if searchform.is_valid():
-            searchform.save(commit=True)
-        return redirect('index')
-    return render(request, 'wikiApp/index.html', {'searchform': searchform,
-                                                  'entry_list': entry_list})
+
+    return render(request, 'wikiApp/index.html', {
+                                                  'entry_list': entry_list,
+                                                  'pk': request.user.pk
+                                                  })
 
 
 # Creating a sign up user
@@ -62,7 +61,7 @@ def log_me_out(request):
     return redirect("index")
 
 
-def newEntry(request):
+def newEntry(request,pk):
     # ________________________ CREATE NEW ENTRIES ________________________#
 
     if request.method == "POST":
@@ -82,12 +81,14 @@ def newEntry(request):
 
     context = {
         'form': NewEntryForm(),
+        'pk': pk
 
     }
     return render(request, "wikiApp/newEntry.html", context)
 
 
 def edit(request, pk):
+    print(request.method)
     entry = get_object_or_404(NewEntryModel, pk=pk)
     form = NewEntryForm(request.POST or None, instance=entry)
     if request.POST:
@@ -107,18 +108,21 @@ def delete(request, pk):
     return redirect('yourWikiEntries')
 
 
-def yourWikiEntries(request):
+def yourWikiEntries(request, pk):
     if request.user.is_authenticated:
 
         context = {
+
             "allEntries": NewEntryModel.objects.filter(foreignKeyUser=request.user),
+            'pk': pk
 
         }
         print(context)
         return render(request, 'wikiApp/yourWikiEntries.html', context)
     else:
         context = {
-            "Message_Please_login": "Please Log in to see all your entries"
+            "Message_Please_login": "Please Log in to see all your entries",
+            "pk": pk
         }
         return render(request, 'wikiApp/yourWikiEntries.html', context)
 
@@ -137,7 +141,7 @@ def relatedEntries(request, pk):
                 tempImageFile = tempImageFile["Related_FileUpload"]
 
             doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'],
-                                    Related_Text=request.POST['Related_Text'], Related_FileUpload=tempImageFile,
+                                    Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,
                                     RelatedforeignKeyUser=get_object_or_404(NewEntryModel, pk=pk))
             doc.save()
 
@@ -153,7 +157,20 @@ def search_results(request):
     if request.method == 'GET':
         query = request.GET.get('q')
     context= {
-        'list': NewEntryModel.objects.filter(Entry_Title__icontains=query ) or NewEntryModel.objects.filter(Entry_Text__icontains=query)
+        'list': NewEntryModel.objects.filter
+                (Q(Entry_Title__icontains=query ) | Q(Entry_Text__icontains=query))
     }
 
     return render(request,'wikiApp/search_results.html',context)
+
+
+def details(request,pk):
+    instanceOfNewEntryModel = NewEntryModel.objects.get(pk=pk)
+    relatedEntries_list = RelatedEntryModel.objects.filter(RelatedforeignKeyUser = instanceOfNewEntryModel)
+    print(relatedEntries_list)
+    context = {
+        'Entry': instanceOfNewEntryModel,
+        'allRelatedEntries':relatedEntries_list,
+        'pk': request.user.pk
+    }
+    return render(request,'wikiApp/details.html',context)

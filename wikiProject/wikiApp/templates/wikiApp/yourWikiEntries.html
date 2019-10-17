@@ -12,14 +12,18 @@ These are all your wiki entries!
 {% for myentry in allEntries %}
 
 
-    {{ myentry.Entry_Title }}<br/>
+<br/>{{ myentry.Entry_Title }}<br/>
     {{ myentry.Entry_Text }}<br/>
-    <button><a href="{% url 'edit' myentry.pk %}"> Edit Post</a></button>
-    <button><a href="{% url 'delete' myentry.pk %}"> Delete Post</a></button>
+
+    <button><a href="{% url 'edit' myentry.pk %}"> Edit Post</a></button><br/>
+    <button><a href="{% url 'delete' myentry.pk %}"> Delete Post</a></button><br/>
     <hr/>
 
 
 {% endfor %}
+
+
+
 
 
 

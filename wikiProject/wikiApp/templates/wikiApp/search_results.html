@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'wikiApp/index.html' %}
+
+{% block header   %}
+
+Search Results!
+
+{% endblock %}
+
+
+
+
+{% block search %}
 
 {% for entry in list %}
 
-    {{ entry.Entry_Title }}
+<a href=" ">{{ entry.Entry_Title }}</a>
+            {{ entry.Entry_Text }}
 
 {% endfor  %}
 
 
-</body>
-</html>
+{% endblock %}
