@@ -13,6 +13,11 @@ Details Page
 {{Entry.Entry_Text}}
 <img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
 
+{% endblock %}
+
+
+{% block detailRelatedEntry %}
+
 {% for entry in allRelatedEntries %}
 
 {{ entry.Related_Title }}<br/>
@@ -26,6 +31,5 @@ Details Page
 <hr/>
 {% endfor %}
 
-
-
 {% endblock %}
+

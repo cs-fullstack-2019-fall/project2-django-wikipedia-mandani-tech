@@ -94,7 +94,7 @@ def edit(request, pk):
     if request.POST:
         if form.is_valid():
             form.save()
-            return redirect('yourWikiEntries')
+            return redirect('yourWikiEntries', pk)
     context = {'form': form,
                "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser=entry),
                'pk': pk
@@ -103,9 +103,10 @@ def edit(request, pk):
 
 
 def delete(request, pk):
-    entry = get_object_or_404(NewEntryModel, pk=pk)
+
+    entry = get_object_or_404(NewEntryModel, pk = pk)
     entry.delete()
-    return redirect('yourWikiEntries')
+    return redirect('yourWikiEntries', pk)
 
 
 def yourWikiEntries(request, pk):
@@ -148,7 +149,8 @@ def relatedEntries(request, pk):
         return redirect('edit', pk)
 
     context = {
-        'relatedform': RelatedEntryForm()
+        'relatedform': RelatedEntryForm(),
+        'pk': pk
     }
     return render(request, "wikiApp/relatedEntries.html", context)
 
