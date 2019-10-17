@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'wikiApp/index.css' %}">
 </head>
 <body id="container">
-<h1 id="header" class="jumbotron">{% block header %}Welcome to Wikipedia{% endblock header %}</h1>
+<h1 id="header" class="jumbotron"> {% block header %}Welcome to Wikipedia{% endblock header %}</h1>
 {% if user.is_authenticated %}
 <p>Welcome, {{ user.username}}.</p>
 <section>
@@ -25,6 +25,13 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/yourWikiEntries/">Your Wiki Entires</a>
+        </li>
+
+        <li class="nav-item" >
+            <form action="/search_results/" method="get">
+                <label for="search1">Search</label>
+                <input id="search1" type="text" placeholder="Wiki search..." name="q"></form>
+
         </li>
     </ul>
 </section>
@@ -59,48 +66,40 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/new_user/">Sign Up</a>
                 </li>
+                <li class="nav-item" >
+                    <form action="/search_results/" method="get">
+                    <label for="search2">Search</label>
+                    <input id="search2" type="text" placeholder="Wiki search..." name="q"></form>
+
+                </li>
             </ul>
         </section>
-{% endif %}
+{% endif %} {#________________________Logged In User Authentication if ends here_______________________#}
 
 
-
-<form id="searchbar" method="POST">
-
-    {{ searchform.as_p }}
-    {% csrf_token %}
-
-</form>
+{% block signup %}
+{% endblock %}
 
 
-
-<section>
-    <br/>
 {% block logIncontent %}
 {% endblock %}
 
-</section>
-
-<section>
-    {% block signup   %}
-    {% endblock %}
-</section>
+{% block loggedInEntry %}
+{% endblock %}
 
 
-<section class="postEntry">
+<section class="display_entries">
 
     {% for post in entry_list %}
 
     {{ post.Entry_Title }}<br/>
     {{ post.Entry_Text }}
-    <p>{{entry.Entry_FileUpload}} test</p>
+
     {% if  post.Entry_FileUpload  != '' %}
     <img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE"><br/>
     {% endif %}
-
-
     <hr/>
-<section>
+<section  class="display_entries">
         {% for entry in allRelatedEntries %}
 
         {{ entry.Related_Title }}<br/>
@@ -122,12 +121,11 @@
 </section>
 
 
-<section>
 
-{% block loggedInEntry %}
-{% endblock %}
 
-</section>
+
+
+
 
 <footer id="footer" class="jumbotron">This application is developed by Hamida Mandani</footer>
 

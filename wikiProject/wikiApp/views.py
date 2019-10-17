@@ -16,8 +16,9 @@ def index(request):
         if searchform.is_valid():
             searchform.save(commit=True)
         return redirect('index')
-    return render(request, 'wikiApp/index.html',{'searchform': searchform,
-                                                 'entry_list': entry_list })
+    return render(request, 'wikiApp/index.html', {'searchform': searchform,
+                                                  'entry_list': entry_list})
+
 
 # Creating a sign up user
 def new_user(request):
@@ -53,7 +54,7 @@ def login_my_user(request):
         context = {
             "loginform": NewUserForm,
         }
-        return render(request, 'wikiApp/login_my_user.html',context)
+        return render(request, 'wikiApp/login_my_user.html', context)
 
 
 def log_me_out(request):
@@ -62,7 +63,7 @@ def log_me_out(request):
 
 
 def newEntry(request):
-    #________________________ CREATE NEW ENTRIES ________________________#
+    # ________________________ CREATE NEW ENTRIES ________________________#
 
     if request.method == "POST":
         print(request.POST)
@@ -74,30 +75,29 @@ def newEntry(request):
                 tempImageFile = ''
             else:
                 tempImageFile = tempImageFile['Entry_FileUpload']
-            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'], Entry_FileUpload = tempImageFile ,foreignKeyUser = request.user)
+            doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'],
+                                Entry_FileUpload=tempImageFile, foreignKeyUser=request.user)
             doc.save()
         return redirect("index")
 
     context = {
-         'form': NewEntryForm(),
+        'form': NewEntryForm(),
 
-        }
+    }
     return render(request, "wikiApp/newEntry.html", context)
 
 
 def edit(request, pk):
     entry = get_object_or_404(NewEntryModel, pk=pk)
-    form = NewEntryForm(request.POST or None, instance = entry)
+    form = NewEntryForm(request.POST or None, instance=entry)
     if request.POST:
         if form.is_valid():
             form.save()
             return redirect('yourWikiEntries')
     context = {'form': form,
-                   "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser = entry),
+               "allRelatedEntries": RelatedEntryModel.objects.filter(RelatedforeignKeyUser=entry),
                'pk': pk
-
-
-                   }
+               }
     return render(request, 'wikiApp/edit.html', context)
 
 
@@ -123,10 +123,9 @@ def yourWikiEntries(request):
         return render(request, 'wikiApp/yourWikiEntries.html', context)
 
 
+# ________________________ CREATE RELATED ENTRIES ________________________#
 
-#________________________ CREATE RELATED ENTRIES ________________________#
-
-def relatedEntries(request,pk):
+def relatedEntries(request, pk):
     if request.method == "POST":
         print(request.POST)
         relatedform = RelatedEntryForm(request.POST)
@@ -137,10 +136,12 @@ def relatedEntries(request,pk):
             else:
                 tempImageFile = tempImageFile["Related_FileUpload"]
 
-            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'], Related_Text=request.POST['Related_Text'], Related_FileUpload = tempImageFile,RelatedforeignKeyUser = get_object_or_404(NewEntryModel, pk=pk))
+            doc = RelatedEntryModel(Related_Title=request.POST['Related_Title'],
+                                    Related_Text=request.POST['Related_Text'], Related_FileUpload=tempImageFile,
+                                    RelatedforeignKeyUser=get_object_or_404(NewEntryModel, pk=pk))
             doc.save()
 
-        return redirect ('edit', pk)
+        return redirect('edit', pk)
 
     context = {
         'relatedform': RelatedEntryForm()
@@ -148,3 +149,11 @@ def relatedEntries(request,pk):
     return render(request, "wikiApp/relatedEntries.html", context)
 
 
+def search_results(request):
+    if request.method == 'GET':
+        query = request.GET.get('q')
+    context= {
+        'list': NewEntryModel.objects.filter(Entry_Title__icontains=query ) or NewEntryModel.objects.filter(Entry_Text__icontains=query)
+    }
+
+    return render(request,'wikiApp/search_results.html',context)

@@ -17,11 +17,17 @@ Edit My Entries
 </form>
 
 
+
+
 {% for relatedEntry in allRelatedEntries %}
 
     {{ relatedEntry.Related_Title }}<br/>
     {{ relatedEntry.Related_Text }}<br/>
     <hr/>
+{% if  relatedEntry.Related_FileUpload  != '' %}
+
+<img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
+{% endif %}
 
 {% endfor %}
 
