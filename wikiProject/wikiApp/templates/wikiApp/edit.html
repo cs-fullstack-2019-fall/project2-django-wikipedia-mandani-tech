@@ -10,31 +10,31 @@ Edit My Entries
 
 {% block content %}
 
-<form method='POST'>
+<form method='POST' enctype="multipart/form-data">
     {{ form.as_p }}
     <button type="submit">Save Item</button>
     {% csrf_token %}
 </form>
-
-
-{% for relatedEntry in allRelatedEntries %}
-
-    {{ relatedEntry.Related_Title }}<br/>
-    {{ relatedEntry.Related_Text }}<br/>
-    <hr/>
-{% if  relatedEntry.Related_FileUpload  != '' %}
-
-<img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
-{% endif %}
-
-{% endfor %}
-
 {% endblock content %}
 
 
-
-
 {% block displayRelatedcontent %}
+
+{% for entry in allRelatedEntries %}
+
+{{ entry.Related_Title }}<br/>
+{{ entry.Related_Text }}
+
+{% if entry.Related_FileUpload != '' %}
+<img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
+{% endif %}
+
+<button><a href="{% url 'editRelated' entry.pk %}"> Edit Post</a></button>
+<button><a href="{% url 'deleteRelated' entry.pk %}"> Delete Post</a></button>
+<hr/>
+{% endfor %}
+
+
 
 <button><a href="{% url 'relatedEntries' pk  %}"> Add a Related Entry </a></button>
 

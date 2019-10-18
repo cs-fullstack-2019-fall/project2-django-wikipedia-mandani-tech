@@ -33,7 +33,7 @@
         </li>
 
         <form id="searchbar" action="/search_results/" method="get">
-            <label for="search1">Search</label>
+            <label  for="search1">Search </label>
             <input id="search1" type="text" placeholder="Search Wikipedia..." name="q">
         </form>
 
@@ -100,39 +100,35 @@
 {% endblock %}
 </section>
 
+<section id="editEntryForm">
 {% block content %}
 {% endblock %}
-<section class="display_entries">
-
-    {% for post in entry_list %}
-
-    <a href="{% url 'details' post.pk %}">{{ post.Entry_Title }}</a><br/>
-    {{ post.Entry_Text }}
-
-    {% if post.Entry_FileUpload != '' %}
-    <img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE"><br/>
-    {% endif %}
-
-    <hr/>
-    {% endfor %}
 
 </section>
 
 <section class="display_entries">
-    {% for entry in allRelatedEntries %}
 
-    {{ entry.Related_Title }}<br/>
-    {{ entry.Related_Text }}
+{% for post in entry_list %}
 
-    {% if entry.Related_FileUpload != '' %}
-    <img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>
-    {% endif %}
+<a href="{% url 'details' post.pk %}">{{ post.Entry_Title }}</a><br/><br>
+{{ post.Entry_Text }}<br>
 
-    <button><a href="{% url 'edit' entry.pk %}"> Edit Post</a></button>
-    <button><a href="{% url 'delete' entry.pk %}"> Delete Post</a></button>
-    <hr/>
-    {% endfor %}
+
+{% endfor %}
 </section>
+
+<section class="display_entries_img">
+{% for post in entry_list %}
+{% if post.Entry_FileUpload != '' %}
+<img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE" width="40%" ><br/>
+{% endif %}
+
+<hr/>
+{% endfor %}
+
+</section>
+
+
 
 
 
@@ -150,6 +146,8 @@
 {% endblock %}
 
 </section>
+
+
 
 
 <footer id="footer" class="jumbotron">This application is developed by Hamida Mandani</footer>

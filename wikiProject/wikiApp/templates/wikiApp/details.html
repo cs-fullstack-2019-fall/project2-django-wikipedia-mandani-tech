@@ -9,8 +9,8 @@ Details Page
 
 {% block detailEntry %}
 
-{{Entry.Entry_Title}}
-{{Entry.Entry_Text}}
+{{Entry.Entry_Title}}<br/>
+{{Entry.Entry_Text}}<br/>
 <img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
 
 {% endblock %}
@@ -21,7 +21,7 @@ Details Page
 {% for entry in allRelatedEntries %}
 
 {{ entry.Related_Title }}<br/>
-{{ entry.Related_Text }}
+{{ entry.Related_Text }}<br/>
 
 {% if entry.Related_FileUpload != '' %}
 <img src="{{ entry.Related_FileUpload.url }}" alt=""><br/>

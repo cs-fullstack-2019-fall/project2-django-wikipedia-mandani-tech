@@ -14,9 +14,13 @@ These are all your wiki entries!
 
 <br/>{{ myentry.Entry_Title }}<br/>
     {{ myentry.Entry_Text }}<br/>
+    {% if post.Entry_FileUpload != '' %}
+    <img src="{{ myentry.Entry_FileUpload.url }}" alt="IMAGE"><br/>
+    {% endif %}
 
     <button><a href="{% url 'edit' myentry.pk %}"> Edit Post</a></button><br/>
     <button><a href="{% url 'delete' myentry.pk %}"> Delete Post</a></button><br/>
+
     <hr/>
 
 

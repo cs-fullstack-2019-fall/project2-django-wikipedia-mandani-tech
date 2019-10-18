@@ -155,12 +155,45 @@ def relatedEntries(request, pk):
     return render(request, "wikiApp/relatedEntries.html", context)
 
 
+
+def editRelated(request, pk):
+    print(request.method)
+    entry = get_object_or_404(NewEntryModel, pk = pk)
+    related_instance= RelatedEntryModel.objects.filter(RelatedforeignKeyUser=entry)
+    form = RelatedEntryForm(request.POST or None, instance=related_instance)
+    if request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('editRelated', related_instance)
+    context = {'form': form,
+               'related_instance': related_instance
+               }
+    return render(request, 'wikiApp/edit.html', context)
+
+
+def deleteRelated(request, pk):
+
+    entry = get_object_or_404(RelatedEntryModel, pk = pk)
+    entry.delete()
+    return redirect('index')
+
+
+
+
+
+
+
+
+
+
+
 def search_results(request):
     if request.method == 'GET':
         query = request.GET.get('q')
-    context= {
+    context = {
         'list': NewEntryModel.objects.filter
-                (Q(Entry_Title__icontains=query ) | Q(Entry_Text__icontains=query))
+                (Q(Entry_Title__icontains= query ) | Q(Entry_Text__icontains= query)),
+
     }
 
     return render(request,'wikiApp/search_results.html',context)
