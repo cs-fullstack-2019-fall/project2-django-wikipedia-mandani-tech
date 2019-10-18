@@ -11,7 +11,10 @@ Details Page
 
 {{Entry.Entry_Title}}<br/>
 {{Entry.Entry_Text}}<br/>
+
+{% if entry.Related_FileUpload != '' %}
 <img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
+{% endif %}
 
 {% endblock %}
 

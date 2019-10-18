@@ -1,6 +1,8 @@
+from django.forms import forms
 from django.forms import ModelForm
 from .models import SearchBarModel, NewEntryModel, RelatedEntryModel
 from django.contrib.auth.models import User
+
 
 
 class SearchBarForm(ModelForm):
@@ -16,6 +18,7 @@ class NewEntryForm(ModelForm):
 
 
 class NewUserForm(ModelForm):
+
     class Meta:
         model = User
         fields = ['username','password']

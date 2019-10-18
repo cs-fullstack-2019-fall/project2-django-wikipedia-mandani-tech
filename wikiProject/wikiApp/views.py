@@ -61,7 +61,7 @@ def log_me_out(request):
     return redirect("index")
 
 
-def newEntry(request,pk):
+def newEntry(request, pk):
     # ________________________ CREATE NEW ENTRIES ________________________#
 
     if request.method == "POST":
@@ -77,7 +77,7 @@ def newEntry(request,pk):
             doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'],
                                 Entry_FileUpload=tempImageFile, foreignKeyUser=request.user)
             doc.save()
-        return redirect("index")
+        return redirect("index", pk)
 
     context = {
         'form': NewEntryForm(),
@@ -159,14 +159,14 @@ def relatedEntries(request, pk):
 def editRelated(request, pk):
     print(request.method)
     entry = get_object_or_404(NewEntryModel, pk = pk)
-    related_instance= RelatedEntryModel.objects.filter(RelatedforeignKeyUser=entry)
-    form = RelatedEntryForm(request.POST or None, instance=related_instance)
+    instance= RelatedEntryModel.objects.filter(RelatedforeignKeyUser=entry)
+    form = RelatedEntryForm(request.POST or None, instance=instance)
     if request.POST:
         if form.is_valid():
             form.save()
-            return redirect('editRelated', related_instance)
+            return redirect('editRelated', instance)
     context = {'form': form,
-               'related_instance': related_instance
+               'instance': instance
                }
     return render(request, 'wikiApp/edit.html', context)
 
@@ -176,11 +176,6 @@ def deleteRelated(request, pk):
     entry = get_object_or_404(RelatedEntryModel, pk = pk)
     entry.delete()
     return redirect('index')
-
-
-
-
-
 
 
 

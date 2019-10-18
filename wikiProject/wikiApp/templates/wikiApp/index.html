@@ -11,7 +11,7 @@
 
 <body id="container">
 
-<h1 id="header" class="jumbotron"> {% block header %}Welcome to Wikipedia{% endblock header %}</h1>
+<h1 id="header" class="jumbotron"> {% block header %}Welcome to Memphispedia{% endblock header %}</h1>
 {% if user.is_authenticated %} {#________________________Logged In User Authentication _______________________#}
 
 
@@ -111,7 +111,7 @@
 {% for post in entry_list %}
 
 <a href="{% url 'details' post.pk %}">{{ post.Entry_Title }}</a><br/><br>
-{{ post.Entry_Text }}<br>
+{{ post.Entry_Text }}<br><br><br>
 
 
 {% endfor %}
@@ -120,7 +120,7 @@
 <section class="display_entries_img">
 {% for post in entry_list %}
 {% if post.Entry_FileUpload != '' %}
-<img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE" width="40%" ><br/>
+<img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE" width="50%" ><br/>
 {% endif %}
 
 <hr/>

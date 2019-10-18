@@ -11,7 +11,7 @@
 {% block entryForm %}
 
 <form   method="post" enctype="multipart/form-data">
-{{form}}
+{{form.as_p}}
 {% csrf_token %}
  <button  type="submit">Submit My New Entry</button>
 
