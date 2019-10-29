@@ -185,9 +185,10 @@ def deleteRelated(request, pk):
 def search_results(request):
     if request.method == 'GET':
         query = request.GET.get('q')
+        print(query)
     context = {
         'list': NewEntryModel.objects.filter
-                (Q(Entry_Title__icontains= query ) | Q(Entry_Text__icontains= query)),
+                (Q(Entry_Title__contains= query ) | Q(Entry_Text__contains = query)),
 
     }
 

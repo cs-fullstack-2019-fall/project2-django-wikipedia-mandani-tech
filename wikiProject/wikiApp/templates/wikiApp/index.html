@@ -22,10 +22,10 @@
             <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'newEntry' pk %}">New Wiki Entry</a>
+            <a class="nav-link" href="{% url 'newEntry' request.user.id %}">New Wiki Entry</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'yourWikiEntries' pk %}">Your Wiki Entires</a>
+            <a class="nav-link" href="{% url 'yourWikiEntries' request.user.id %}">Your Wiki Entires</a>
         </li>
 
         <li class="nav.item">
@@ -82,8 +82,8 @@
 
 
 {% endif %} {#________________________Logged In User Authentication if and else ends here_______________________#}
-
-
+{% block search %}
+{% endblock  %}
 
 <section id="signUp">
 {% block signup %}
