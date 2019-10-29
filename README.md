@@ -79,5 +79,5 @@ SUCCESSFUL CREATION OF REQUIRED MODELS MANDATORY FOR ANY POINTS FOR THIS SECTION
 
 * Add support for entering Wiki posts using the 'Markdown' syntax to support rich text formatting and other advanced formatting features.
 
-
-
+Kenn Notes:
+You made great progress. Points are missing because search is not implemented, your wiki entries is not working, a new entry is not possible, the images on home doesn't align with it's text, and I can't edit/delete entries or relational entries.
