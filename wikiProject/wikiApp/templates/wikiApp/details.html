@@ -9,10 +9,10 @@ Details Page
 
 {% block detailEntry %}
 
-{{Entry.Entry_Title}}<br/>
+<h2>{{Entry.Entry_Title}}</h2><br/>
 {{Entry.Entry_Text}}<br/>
 
-{% if entry.Related_FileUpload != '' %}
+{% if entry.Entry_FileUpload != '' %}
 <img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
 {% endif %}
 
@@ -23,7 +23,8 @@ Details Page
 
 {% for entry in allRelatedEntries %}
 
-{{ entry.Related_Title }}<br/>
+<h5>{{ entry.Related_Title }}</h5><br/>
+
 {{ entry.Related_Text }}<br/>
 
 {% if entry.Related_FileUpload != '' %}

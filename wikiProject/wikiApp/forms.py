@@ -15,6 +15,7 @@ class NewEntryForm(ModelForm):
     class Meta:
         model = NewEntryModel
         fields = ['Entry_Title','Entry_Text','Entry_FileUpload']
+#         fields = '__all__'
 
 
 class NewUserForm(ModelForm):
@@ -26,6 +27,7 @@ class NewUserForm(ModelForm):
 class RelatedEntryForm(ModelForm):
     class Meta:
         model = RelatedEntryModel
+#         fields = '__all__'
         fields = ['Related_Title','Related_Text', 'Related_FileUpload']
 
 

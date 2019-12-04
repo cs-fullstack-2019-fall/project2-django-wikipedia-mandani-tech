@@ -42,10 +42,6 @@
 <p id="welcomeuser">Welcome, {{ user.username}}.</p>
 
 
-<section id="entryform">
-    {% block entryForm %}
-    {% endblock entryForm %}
-</section>
 
 <section id="related_entryform">
     {% block RelatedEntryForm %}
@@ -110,7 +106,7 @@
 
 {% for post in entry_list %}
 
-<a href="{% url 'details' post.pk %}">{{ post.Entry_Title }}</a><br/><br>
+    <a href="{% url 'details' post.pk %}"><h3>{{ post.Entry_Title }}</h3></a><br/><br>
 {{ post.Entry_Text }}<br><br><br>
 
 
@@ -130,6 +126,10 @@
 
 
 
+<section id="entryform">
+    {% block entryForm %}
+    {% endblock entryForm %}
+</section>
 
 
 

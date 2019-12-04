@@ -10,7 +10,7 @@
 
 {% block entryForm %}
 
-<form   method="post" enctype="multipart/form-data">
+<form   method="post"  enctype="multipart/form-data" >
 {{form.as_p}}
 {% csrf_token %}
  <button  type="submit">Submit My New Entry</button>
