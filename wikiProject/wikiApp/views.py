@@ -77,7 +77,7 @@ def newEntry(request, pk):
             doc = NewEntryModel(Entry_Title=request.POST['Entry_Title'], Entry_Text=request.POST['Entry_Text'],
                                 Entry_FileUpload=tempImageFile, foreignKeyUser=request.user)
             doc.save()
-        return redirect("index", pk)
+        return redirect('/')
 
     context = {
         'form': NewEntryForm(),
