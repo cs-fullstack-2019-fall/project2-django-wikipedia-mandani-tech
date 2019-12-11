@@ -12,8 +12,8 @@ Details Page
 <h2>{{Entry.Entry_Title}}</h2><br/>
 {{Entry.Entry_Text}}<br/>
 
-{% if entry.Entry_FileUpload != '' %}
-<img src="{{ entry.Entry_FileUpload.url }}" alt=""><br/>
+{% if Entry.Entry_FileUpload != '' %}
+<img src="{{ Entry.Entry_FileUpload.url }}" alt=""><br/>
 {% endif %}
 
 {% endblock %}
