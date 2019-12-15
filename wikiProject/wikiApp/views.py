@@ -33,7 +33,7 @@ def new_user(request):
                 "errors": newUser.errors,
                 "form": NewUserForm(),
             }
-            return render(request, 'wikiApp/index.html', context)
+            return render(request, 'wikiApp/new_user.html', context)
     else:
         context = {
             "form": NewUserForm()
@@ -41,19 +41,31 @@ def new_user(request):
         return render(request, 'wikiApp/new_user.html', context)
 
 
+
+
 def login_my_user(request):
-    if request.method == "POST":
-        print(NewUserForm)
-        loginUser = authenticate(username=request.POST['username'], password=request.POST["password"])
-        if loginUser is not None:
-            login(request, loginUser)
-            return redirect("index")
-    else:
-        messages.error(request, "Wrong username or password")
-        context = {
+       if request.method == "POST":
+            loggedInUser = authenticate(username = request.POST['username'], password = request.POST["password"])
+            if loggedInUser is not None:
+                login(request, loggedInUser)
+                return redirect("index")
+            else:
+                messages.error(request, "Wrong username or password")
+                return redirect("login_my_user")
+
+                # *** This is a different way you can send an error message and rerender the login_user page ***
+                context = {
+                    "error": "Wrong username or password",
+                    "loginform": NewUserForm,
+                }
+                return render(request, "wikiApp/login_my_user.html", context)
+
+
+       context = {
+
             "loginform": NewUserForm,
-        }
-        return render(request, 'wikiApp/login_my_user.html', context)
+       }
+       return render(request, "wikiApp/login_my_user.html", context)
 
 
 def log_me_out(request):

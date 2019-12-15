@@ -8,7 +8,8 @@ Sign Up!
 
 
 {% block signup  %}
-
+{# This will show the form errors that are automatically created #}
+{{ errors }}
 
 <form method="post">
 {{form.as_p}}
