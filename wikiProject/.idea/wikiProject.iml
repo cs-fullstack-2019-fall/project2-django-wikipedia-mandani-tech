@@ -9,7 +9,7 @@
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/wikiProject/wikiApp/templates" />
+        <option value="$MODULE_DIR$/wikiApp/templates" />
       </list>
     </option>
   </component>

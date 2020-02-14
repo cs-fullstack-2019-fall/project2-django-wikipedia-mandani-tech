@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4ed5aa85-e940-45aa-a122-a01cc0afe3f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/wikiProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wikiApp/media/civilrights.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/$CACHE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/$CACHE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/project2-django-wikipedia-mandani-tech.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/project2-django-wikipedia-mandani-tech.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CheckIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CheckIn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Django_FullStack_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Django_FullStack_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample_wiki_edit_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/../sample_wiki_edit_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample_wiki_home_page.png" beforeDir="false" afterPath="$PROJECT_DIR$/../sample_wiki_home_page.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sample_wiki_layout_guide.png" beforeDir="false" afterPath="$PROJECT_DIR$/../sample_wiki_layout_guide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wikiProject.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../wikiProject.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/007CasinoRoyal.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/007CasinoRoyal.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/007MoviesQuantum.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/007MoviesQuantum.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/007MoviesQuantum_eBsqAB8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/007MoviesQuantum_eBsqAB8.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/2019-02-07_lecture1.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/2019-02-07_lecture1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/C_prog.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/C_prog.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/C_prog_SvdcG9F.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/C_prog_SvdcG9F.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/CodeCrew.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/CodeCrew.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/CodeCrew_x3i87aj.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/CodeCrew_x3i87aj.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/DMC.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/DMC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/Memphis_TN_Photo_Collage.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/Memphis_TN_Photo_Collage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/Memphis_TN_Photo_Collage_VQDXGgy.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/Memphis_TN_Photo_Collage_VQDXGgy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/Python_logo-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/Python_logo-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/Python_logo-128_yKVfeuM.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/Python_logo-128_yKVfeuM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/Title.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/Title.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/_java-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/_java-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/beale.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/beale.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/bluesmusic.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/bluesmusic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/challengeImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/challengeImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/challengeImage_7Ix3Bz6.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/challengeImage_7Ix3Bz6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/css-file-format-symbol.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/css-file-format-symbol.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/download.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/download.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/download_97upFcx.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/download_97upFcx.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/download_WlREDOc.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/download_WlREDOc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/download_XyNnjiH.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/download_XyNnjiH.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/github_circle_black-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/github_circle_black-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/github_circle_black-128_511EKuZ.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/github_circle_black-128_511EKuZ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/grizzlies.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/grizzlies.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/grizzliescoach.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/grizzliescoach.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/index_HX51S4F.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/index_HX51S4F.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/index_nVlMrXg.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/index_nVlMrXg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/index_vUBkLyq.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/index_vUBkLyq.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript_4wTJv5j.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript_4wTJv5j.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript_BgIAgui.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript_BgIAgui.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript_NPTtZCO.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript_NPTtZCO.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript_SnkNIGR.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript_SnkNIGR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/javascript_fSBYEaX.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/javascript_fSBYEaX.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ_V90fj3A.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ_V90fj3A.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ_ibWNwAX.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/memphis_BBQ_ibWNwAX.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/mumbai-bollywood.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/mumbai-bollywood.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/side_art.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/side_art.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/step1.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/step1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/media/step3.png" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/media/step3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0002_newentrymodel_relatedentrymodel.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0002_newentrymodel_relatedentrymodel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0003_auto_20191016_1936.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0003_auto_20191016_1936.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0004_auto_20191016_2031.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0004_auto_20191016_2031.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0005_auto_20191016_2031.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0005_auto_20191016_2031.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0006_auto_20191203_0505.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0006_auto_20191203_0505.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0007_auto_20191203_0507.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0007_auto_20191203_0507.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/0008_auto_20191204_0456.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/0008_auto_20191204_0456.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/static/wikiApp/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/static/wikiApp/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/static/wikiApp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/static/wikiApp/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/login_my_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/login_my_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/newEntry.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/newEntry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/new_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/relatedEntries.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/relatedEntries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/search_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/templates/wikiApp/yourWikiEntries.html" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/templates/wikiApp/yourWikiEntries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiProject/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiProject/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wikiProject/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wikiProject/wsgi.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wikiApp/views.py">
+          <provider selected="true" editor-type-id="live-pycharm">
+            <state>
+              <first_editor relative-caret-position="165">
+                <caret line="197" column="31" lean-forward="true" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+                <folding>
+                  <element signature="e#0#35#0" expanded="true" />
+                </folding>
+              </first_editor>
+              <second_editor relative-caret-position="-105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/search_results.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wikiApp/static/wikiApp/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/yourWikiEntries.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>aq</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/wikiApp/templates/wikiApp/index.html" />
+        <option value="$PROJECT_DIR$/wikiApp/static/wikiApp/index.css" />
+        <option value="$PROJECT_DIR$/wikiApp/templates/wikiApp/yourWikiEntries.html" />
+        <option value="$PROJECT_DIR$/wikiApp/templates/wikiApp/search_results.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="133" />
+    <option name="y" value="47" />
+    <option name="width" value="1380" />
+    <option name="height" value="833" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wikiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="wikiProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ed5aa85-e940-45aa-a122-a01cc0afe3f6" name="Default Changelist" comment="" />
+      <created>1581641902111</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581641902111</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1600" height="824" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19305019" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Pylint" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3438849" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Mongo Explorer" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="right" id="SciView" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wikiApp/static/wikiApp/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/yourWikiEntries.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/search_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wikiApp/templates/wikiApp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wikiApp/views.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="165">
+            <caret line="197" column="31" lean-forward="true" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
+            <folding>
+              <element signature="e#0#35#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-105" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

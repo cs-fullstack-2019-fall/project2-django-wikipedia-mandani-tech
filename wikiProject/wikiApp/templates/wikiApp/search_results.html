@@ -11,12 +11,28 @@ Search Results!
 
 {% block search %}
 
-{% for entry in list %}
+<table class="table">
+    {% for entry in list %}
 
-<a href="/">{{ entry.Entry_Title }}</a>
-            {{ entry.Entry_Text }}
+<tr>
 
-{% endfor  %}
+<td>
+    <a href="/">{{ entry.Entry_Title }}</a>
+    {{ entry.Entry_Text }}<br>
+</td>
+<td>
+    {% if post.Entry_FileUpload != '' %}
+    <img src="{{ entry.Entry_FileUpload.url }}" alt="IMAGE" height="400px" width="400px"><br/>
+    {% endif %}
+
+
+</td>
+
+</tr>
+    {% endfor  %}
 
 
 {% endblock %}
+
+
+</table>

@@ -8,25 +8,39 @@ These are all your wiki entries!
 
 
 {% block loggedInEntry %}
-
+<table class="table">
 {% for myentry in allEntries %}
+<tr>
 
 
-<br/>{{ myentry.Entry_Title }}<br/>
-    {{ myentry.Entry_Text }}<br/>
+
+<td>{{ myentry.Entry_Title }}
+    {{ myentry.Entry_Text }}
+</td>
+
+<td>
     {% if post.Entry_FileUpload != '' %}
-    <img src="{{ myentry.Entry_FileUpload.url }}" alt="IMAGE"><br/>
+    <img src="{{ myentry.Entry_FileUpload.url }}" alt="IMAGE" height="300px" width="300px"><br>
     {% endif %}
+    <hr>
 
-    <button><a href="{% url 'edit' myentry.pk %}"> Edit Post</a></button><br/>
-    <button><a href="{% url 'delete' myentry.pk %}"> Delete Post</a></button><br/>
+    <button class="btn"><a href="{% url 'edit' myentry.pk %}"> Edit Post</a></button>
+    <button class="btn"><a href="{% url 'delete' myentry.pk %}"> Delete Post</a></button><br/>
 
-    <hr/>
+</td>
+
+
+
 
 
 {% endfor %}
 
+</tr>
 
+<tr>
+
+</tr>
+</table>
 
 
 

@@ -32,14 +32,17 @@
             <a class="nav-link active" href="/log_me_out/">Logout</a>
         </li>
 
-        <form id="searchbar" action="/search_results/" method="get" >
-            <label  for="search1">Search </label>
-            <input id="search1" type="text" placeholder="Search Wikipedia..." name="q">
-        </form>
+        <li class="nav-item">
 
+        <form id="searchbar" action="/search_results/" method="get" >
+<!--            <label class="nav-link" for="search1">Search</label>-->
+            <input id="search1" type="text" placeholder="Search Wikipedia..." name="q">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+        </li>
     </ul>
 </section>
-<p id="welcomeuser">Welcome, {{ user.username}}.</p>
+<h4 id="welcomeuser">Welcome, {{ user.username}}.</h4>
 
 
 
@@ -66,13 +69,14 @@
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="/new_user/">Sign Up</a>
+        <li class="nav-item">
+
+            <form id="searchbar2" action="/search_results/" method="get" >
+                <!--            <label class="nav-link" for="search1">Search</label>-->
+                <input id="search2" type="text" placeholder="Search Wikipedia..." name="q">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
         </li>
-
-
-        <form action="/search_results/" method="get">
-            <label for="search2">Search</label>
-            <input id="search2" type="text" placeholder="Search Wikipedia..." name="q">
-        </form>
     </ul>
 </section>
 
@@ -99,30 +103,26 @@
 </section>
 
 <section id="editEntryForm">
-{% block content %}
-{% endblock %}
-
-</section>
-
-<section class="display_entries">
-
+<table class="table">
 {% for post in entry_list %}
 
-    <a href="{% url 'details' post.pk %}"><h3>{{ post.Entry_Title }}</h3></a><br/><br>
-{{ post.Entry_Text }}<br><br><br>
+    <tr>
+
+   <td><a href="{% url 'details' post.pk %}"><h3>{{ post.Entry_Title }}</h3></a><br/><br>
+{{ post.Entry_Text }}<br><br><br></td>
 
 
-{% endfor %}
-</section>
-
-<section class="display_entries_img">
-{% for post in entry_list %}
-{% if post.Entry_FileUpload != '' %}
-<img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE" width="50%" ><br/>
+<td>
+        {% if post.Entry_FileUpload != '' %}
+<img src="{{ post.Entry_FileUpload.url }}" alt="IMAGE" width="300%" ><br/>
 {% endif %}
 
-<hr/>
+
 {% endfor %}
+</td>
+
+    </tr>
+</table>
 
 </section>
 
